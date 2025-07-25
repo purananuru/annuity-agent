@@ -1,22 +1,20 @@
 
 # Annuity Agent with LangChain ReAct
 
-This project processes annuity application PDFs, extracts relevant fields, validates them, and outputs structured reports using a LangChain ReAct agent.
+This project processes annuity application PDFs, extracts and validates key fields, and outputs structured reports using LangChain and LangSmith.
 
 ## Features
-- Extract and validate fields (DOB, advisor ID)
-- Use LangSmith for tracing/debugging
-- PDF text extraction using PyMuPDF
+- Validate date of birth format
+- Validate advisor ID against local database
+- Extract demographics: state, sex, age, medical conditions
+- Uses LangChain ReAct Agent
+- LangSmith tracing enabled
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
-export OPENAI_API_KEY=your-api-key
-export LANGCHAIN_API_KEY=your-langsmith-api-key
+export OPENAI_API_KEY=your-openai-key
+export LANGCHAIN_API_KEY=your-langsmith-key
 python main.py
 ```
-
-## To Do
-- Add more validations (name presence, medical conditions)
-- Handle batch processing of PDFs
